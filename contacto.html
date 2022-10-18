@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    html {
+      background-color: rgb(109, 107, 104);
+
+      
+    }
+
+
+    .caja1 {
+      width: 40%;
+  
+      
+      float: left;
+    }
+
+    .caja2 {
+      
+      
+      width: 40%;
+      float:right;
+      padding-right: 1%;
+     border-style: groove;
+      
+    }
+  </style>
+
+<body>
+  <div class="flex-container">
+    <div class="caja1">
+      <form action="/action_page.php" target="_blank" method="post">
+        <label for="fname">Nombre:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Apellido:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br><br>
+        <label for="mail">Mail:</label><br>
+        <input type="text" id="mail" name="mail" value="" required><br><br>
+        <p2>el comentario no puede superar los 300 caracteres</p2>
+        <textarea name="message" rows="10" cols="40" maxlength="300"></textarea>
+        <br><br>
+        <label for="contacto">Seleccione el motivo de contacto:</label>
+        <select id="contacto" name="contacto">
+          <option value="COMPRAS">COMPRAS</option>
+          <option value="RECLAMOS ">RECLAMOS</option>
+          <option value="SUGERENCIAS">SUGERENCIAS</option>
+          <option value="OTRAS">OTRAS</option>
+        </select>
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Restablecer">
+      </form>
+      <form>
+        <label>Caracteres restantes: <span></span></label>
+        <input type="text" maxlength="150" />
+        <label> Caracteres restantes: <span></span></label>
+        <textarea maxlength="150"></textarea>
+      </form>
+
+
+
+
+
+    </div>
+    <div class="caja2">
+      <img src="img/manoalambre.png" height="auto"  width="80%"></a>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+</head>

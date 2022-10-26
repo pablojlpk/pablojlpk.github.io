@@ -2,35 +2,25 @@
 <html>
 
 <head>
-  <style>
-    html {
-      background-color: rgb(109, 107, 104);
 
-      
-    }
-
-
-    .caja1 {
-      width: 40%;
-  
-      
-      float: left;
-    }
-
-    .caja2 {
-      
-      
-      width: 40%;
-      float:right;
-      padding-right: 1%;
-     border-style: groove;
-      
-    }
-  </style>
-
+  <link rel="stylesheet" type="text/css" href="estilo.css">
 <body>
+<header>
+  
+  <ul>
+    <li><a href="index.html">Principal</a></li>
+    <li><a href="productos.html">Servicios</a></li>
+    <li><a href="servicios.html">Productos</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+    
+</ul>
+</header>
   <div class="flex-container">
-    <div class="caja1">
+    
+    
+    <div class="formulario-contacto">
+      
+      
       <form action="/action_page.php" target="_blank" method="post">
         <label for="fname">Nombre:</label><br>
         <input type="text" id="fname" name="fname" value=""><br>
@@ -60,15 +50,20 @@
         <textarea maxlength="150"></textarea>
       </form>
 
-
-
-
-
     </div>
     <div class="caja2">
       <img src="img/manoalambre.png" height="auto"  width="80%"></a>
     </div>
   </div>
+
+
+  <footer>
+    <p>Términos de uso y políticas de privacidad.
+        © 2022 Grupo Aensis – Todos los derechos reservados.</p>
+        <p></p>
+        <logo class="logo">
+            <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px" >
+</footer>
 
 </body>
 

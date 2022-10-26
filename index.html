@@ -5,149 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <Style>
-        .wrapper {
-            width: 100%;
-            /*ancho a 90*/
-            max-width: 1000px;
-            /* ancho*/
-            margin: auto;
-            /* centro */
-            overflow: hidden;
-            /* saco errores */
+    <title>Soreca SA</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 
-
-        }
-
-        nav {
-            background-color: rgb(90, 90, 90);
-            color: rgb(255, 238, 0);
-            position: absolute;
-            font-style: normal;
-            font-family: 'Courier New', Courier, monospace;
-            font-style: normal;
-        }
-
-        head {
-            background-color: blue;
-            width: auto%;
-            height: 15%;
-            border-color: blue;
-
-
-        }
-
-        body {
-            width: auto;
-            background-color: rgb(128, 119, 0);
-            height: 50%;
-        }
-
-        img {
-            //visibility: hidden;
-
-        }
-        
-
-        .caja1 {
-            background-color: rebeccapurple;
-            width: 15%;
-            height: 500px;
-            float: left;
-
-            
-        }
-
-        .centro {
-            background-color: rgb(76, 0, 255);
     
-            
-            /* The image used */
-            background-image: url("img/biga.png");
-
-            background-image: -moz-linear-gradient();
-            /* Full height */
-            height: 100%;
-
-            background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  color: aliceblue;
-  align-self: center;
-  vertical-align:bottom ;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 20px;
-            width: 70%;
-            height: 500px;
-            float: left;
-          
-            vertical-align: bottom;
-            text-align:center;
-            text-indent: 20px;
-
-        }
-
-        .caja2 {
-            background-color: rgb(247, 247, 247);
-            width: 15%;
-            height: 500px;
-            float: right;
-            text-align: center;
-            justify-content:space-between;
-
-        }
-
-        .menu {
-            background-color: black;
-            width: 100%;
-            height: 50px;
-
-        }
-
-        a {
-            color: white;
-        }
-
-        soreca {
-            font: bold;
-
-        }
-
-        footer {
-            position: absolute;
-            background-color: rgb(175, 180, 175);
-            bottom: 0%;
-            width: 100%;
-            height: 100px;
-            vertical-align: center;
-            text-align: center;
-            
-        }
-    </Style>
-
+</head>
 
 <body>
 
 
-    <head>
+    <header>
 
         <div class="wrapper">
-            <logo class="logo">
-                <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px">
+  
         </div>
-        <div class="menu">
-            <nav>
-           
-                
-                <a href="#">productos</a>
-                <a href="#">Servicios</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
+        <ul>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            
+        </ul>
 
-    </head>
+    </header>
 
     <div class="caja1">
         <h2>Noticias</h2>
@@ -161,22 +40,23 @@
             en acero apuntando a los sectores industria, agronomía y construcción.
 
             En 1970 fue fundado Por Pedro Guitierrez P. y desde la fecha pertenece a la familia.
-</p>
+        </p>
 
 
     </div>
     <div class="caja2">
-        
+
         <h2>Nuestras Certificaciones</h2>
-       
-        <a href="https://www.bsigroup.com/es-ES/Gestion-de-Calidad-ISO-9001/#:~:text=Un%20sistema%20de%20gesti%C3%B3n%20ISO,un%20servicio%20consistente%20y%20eficaz." target="_blank">
 
-       <img src="img/iso9001.png" alt="" height="25%" </a>
+        <a href="https://www.bsigroup.com/es-ES/Gestion-de-Calidad-ISO-9001/#:~:text=Un%20sistema%20de%20gesti%C3%B3n%20ISO,un%20servicio%20consistente%20y%20eficaz."
+            target="_blank">
 
-<p></p>
-        <a href="https://www.nueva-iso-14001.com/2018/04/norma-iso-14001-que-es/" target="_blank">
-        <img src="img/iso14001.png" alt="" height="25%" <\a>
-    
+            <img src="img/iso9001.png" alt="" height="25%" </a>
+
+            <p></p>
+            <a href="https://www.nueva-iso-14001.com/2018/04/norma-iso-14001-que-es/" target="_blank">
+                <img src="img/iso14001.png" alt="" height="25%" <\a>
+
     </div>
 
 
@@ -184,7 +64,9 @@
     <footer>
         <p>Términos de uso y políticas de privacidad.
             © 2022 Grupo Aensis – Todos los derechos reservados.</p>
-
+            <p></p>
+            <logo class="logo">
+                <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px" >
     </footer>
 </body>
 

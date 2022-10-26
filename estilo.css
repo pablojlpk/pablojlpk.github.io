@@ -1,0 +1,172 @@
+.wrapper {
+    width: 100%;
+    /*ancho a 90*/
+    max-width: 1000px;
+    /* ancho*/
+    margin: auto;
+    /* centro */
+    overflow: hidden;
+    /* saco errores */
+    ;
+}
+
+nav {
+    background-color: rgb(90, 90, 90);
+    color: rgb(255, 238, 0);
+    
+    font-style: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+}
+header{
+    height: 70px;
+}
+
+head {
+    background-color: blue;
+    width: auto%;
+    height: 15%;
+    border-color: blue;
+
+
+}
+
+body {
+    width: auto;
+    background-color: none;
+    height: 50%;
+}
+
+img {
+    //visibility: hidden;
+
+}
+
+
+.caja1 {
+    background-color: rebeccapurple;
+    width: 15%;
+    height: 500px;
+    float: left;
+
+
+}
+
+.centro {
+    background-color: rgb(76, 0, 255);
+
+
+    /* The image used */
+    background-image: url("img/biga.png");
+background-image: 100% auto;
+    /* Full height */
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: aliceblue;
+    align-self: center;
+    vertical-align: bottom;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    width: 70%;
+    height: 500px;
+    float: left;
+
+    vertical-align: bottom;
+    text-align: center;
+    text-indent: 20px;
+
+}
+
+.caja2 {
+    background-color: rgb(247, 247, 247);
+
+    width: 15%;
+    height: 500px;
+    float: right;
+    text-align: center;
+    justify-content: space-between;
+
+}
+
+
+ul {
+    //background-image: url("img/prod-encab.png");
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dddddd;
+  }
+  
+  li {
+    float: left;
+
+}
+  
+  li a {
+    display: block;
+    padding: 25px;
+      
+}
+
+
+.menu {
+    background-image: url("img/prod-encab.png");
+                display: flex;
+                list-style: none;
+                padding: 0;
+                //margin: 0;
+         
+                
+                
+
+    width: 100%;
+    height: 100px;
+
+}
+
+
+*/
+
+soreca {
+    font: bold;
+
+}
+
+footer {
+    position: fixed;
+    background-color: rgb(175, 180, 175);
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    vertical-align: center;
+    text-align: center;
+
+}
+
+//contacto
+.formulario-contacto {
+    background-color: rgb(76, 0, 255);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: aliceblue;
+    align-self: center;
+    vertical-align: bottom;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    width: 40%;
+    height: 200px;
+    float: center;
+
+    vertical-align: bottom;
+    text-align: center;
+    text-indent: 20px;
+
+}

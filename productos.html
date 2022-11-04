@@ -1,32 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>productos_actualizado</title>
+  <link rel="stylesheet" type="text/css" href="estilosproducto.css">
+  
 </head>
+
+
+<script>
+
+
+  window.onload = function () {
+
+    const IMAGENES = [ //creo vector que contiene las siguiens imágenes
+      "img/alamband.png",
+      'img/alambre_galvanizado.png',
+      'img/clavo.png',
+      'img/rombo.png',
+    ];
+
+
+    const TIEMPO_INTERVALO_MILESIMAS_SEG = 5000;//tiempo 5 segundos entre imagen
+    let posicionActual = 0;
+    let $botonRetroceder = document.querySelector('#retroceder');
+    let $botonAvanzar = document.querySelector('#avanzar');
+    let $imagen = document.querySelector('#imagen');
+    let $botonPlay = document.querySelector('#play');
+    let $botonStop = document.querySelector('#stop');
+    let intervalo;
+
+    // Funciones
+
+    /**
+     * Funcion que cambia la foto en la siguiente posicion
+     */
+    function pasarFoto() {
+      if (posicionActual >= IMAGENES.length - 1) {
+        posicionActual = 0;
+      } else {
+        posicionActual++;
+      }
+      renderizarImagen();
+    }
+
+    /**
+     * Funcion que cambia la foto en la anterior posicion
+     */
+    function retrocederFoto() {
+      if (posicionActual <= 0) {
+        posicionActual = IMAGENES.length - 1;
+      } else {
+        posicionActual--;
+      }
+      renderizarImagen();
+    }
+
+    function renderizarImagen() { //actualizo imaggen segun posicion
+      $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+    }
+
+
+    function playIntervalo() { //Funcion reproducir automaticamente
+      intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+      // Desactivamos los botones de control
+      $botonAvanzar.setAttribute('disabled', true);
+      $botonRetroceder.setAttribute('disabled', true);
+      $botonPlay.setAttribute('disabled', true);
+      $botonStop.removeAttribute('disabled');
+
+    }
+
+
+    function stopIntervalo() {//se para la reproduccion
+      clearInterval(intervalo);
+      //activo botones
+      $botonAvanzar.removeAttribute('disabled');
+      $botonRetroceder.removeAttribute('disabled');
+      $botonPlay.removeAttribute('disabled');
+      $botonStop.setAttribute('disabled', true);
+    }
+
+    // evento de los botones
+    $botonAvanzar.addEventListener('click', pasarFoto);
+    $botonRetroceder.addEventListener('click', retrocederFoto);
+    $botonPlay.addEventListener('click', playIntervalo);
+    $botonStop.addEventListener('click', stopIntervalo);
+    //inicializo las funciones
+    renderizarImagen();
+    playIntervalo();
+  } 
+</script>
+
+
+</script>
+
+
 <body>
+
+
+  <header>
+    <ul>
+      <li><a href="index.html">Principal</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+  </header>
+
+  <h1>Productos Destacados </h1>
+  <div class="carousel">
+
+    <div id="imagen"> </div>
+
+
+  </div>
+
+  <div class="botones">
+    <br>
+    <button id="avanzar">Avanzar</button>
+    <button id="stop" disabled>Parar Reproduccion automática</button>
+    <button id="play">Reproducir Automaticamente</button>
+    <button id="retroceder">Retroceder</button>
+  </div>
+
+
+  <footer>
+    <p>Términos de uso y políticas de privacidad.
+        © 2022 Grupo Aensis – Todos los derechos reservados.</p>
+        <p></p>
+        <logo class="logo">
+            <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px" >
+</footer>
+
   
-  
-    <header>
 
-        
-        <ul>
-            
-            <li><a href="index.html">Principal</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            
-        </ul>
-
-    </header>
-
-
-
-    
-
-    
 </body>
+
 </html>

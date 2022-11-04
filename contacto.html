@@ -4,28 +4,31 @@
 <head>
 
   <link rel="stylesheet" type="text/css" href="estilo.css">
+
 <body>
-<header>
-  
-  <ul>
-    <li><a href="index.html">Principal</a></li>
-    <li><a href="productos.html">Servicios</a></li>
-    <li><a href="servicios.html">Productos</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-    
-</ul>
-</header>
+  <header>
+
+    <ul>
+      <li><a href="index.html">Principal</a></li>
+      <li><a href="productos.html">Servicios</a></li>
+      <li><a href="servicios.html">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </header>
+
   <div class="flex-container">
-    
-    
+
+
     <div class="formulario-contacto">
-      
-      
-      <form action="/action_page.php" target="_blank" method="post">
-        <label for="fname">Nombre:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br>
-        <label for="lname">Apellido:</label><br>
-        <input type="text" id="lname" name="lname" value=""><br><br>
+
+      <button onclick="copiar()" type="button">texto</button>
+      <form action="#" onsubmit="return simular_envio()">
+        //<form action="/action_page.php" target="_blank" method="post">         
+       
+        <label for="nombre" >Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" value=""><br>
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" id="apellido" name="apellido" value=""><br><br>
         <label for="mail">Mail:</label><br>
         <input type="text" id="mail" name="mail" value="" required><br><br>
         <p2>el comentario no puede superar los 300 caracteres</p2>
@@ -38,11 +41,22 @@
           <option value="SUGERENCIAS">SUGERENCIAS</option>
           <option value="OTRAS">OTRAS</option>
         </select>
+
+
         <label for="myfile">Select a file:</label>
         <input type="file" id="myfile" name="myfile"><br><br>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Restablecer">
+        <input type="submit" value="Submit"><br></br>
+       
+        
+        <input type="reset" value="Restablecer"><br></br>
+      
+        <button onclick="copiar()">copiarTexto</button>
+        
+      
       </form>
+
+      <button onclick="copiar()">texto</button>
+
       <form>
         <label>Caracteres restantes: <span></span></label>
         <input type="text" maxlength="150" />
@@ -51,22 +65,42 @@
       </form>
 
     </div>
-    <div class="caja2">
-      <img src="img/manoalambre.png" height="auto"  width="80%"></a>
-    </div>
+    
+    
   </div>
 
+  <h1>ver la siguiente informacion
+    https://www.w3schools.com/js/js_validation.asp
 
+  </h1>
   <footer>
     <p>Términos de uso y políticas de privacidad.
-        © 2022 Grupo Aensis – Todos los derechos reservados.</p>
-        <p></p>
-        <logo class="logo">
-            <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px" >
-</footer>
+      © 2022 Grupo Aensis – Todos los derechos reservados.</p>
+    <p></p>
+    <logo class="logo">
+      <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px">
+  </footer>
+
+
+  <script>
+    function simular_envio(){
+      alert("Su consulta fue enviada! MUCHAS GRACIAS");
+      return false;
+    }
+    function copiar(){
+      let nombre=document.getElementById("nombre");
+      let apellido=document.getElementById("apellido");
+      let mail=document.getElementById("mail");
+      
+
+      nombre.value="Pablo Javier";
+      apellido.value="Lopez Pujato";
+      mail.value="pp@pp.com"
+    
+    }
+
+      </script>
 
 </body>
 
 </html>
-
-</head>

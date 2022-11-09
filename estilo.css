@@ -170,6 +170,12 @@ footer {
     text-indent: 20px;
 
 }
+form{
+    text-align: center;
+    background-color: cadetblue;
+    display: block;
+}
+}
 
 //estilos pagina producto
         .carousel {

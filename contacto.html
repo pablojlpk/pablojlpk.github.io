@@ -29,12 +29,12 @@
         <label for="mail">Mail:</label><br><br>
         <input type="text" id="mail" nome="mail" value=""><br><br>
         <textarea type="text" id="mensaje" rows="15" cols="40" maxlength="150" value="">
-          
+
         </textarea><br>
         <label for="contador">contador</label>
-        
+
         <p2>el comentario no puede superar los 300 caracteres</p2><br><br>
-        
+
         <label for="contacto">Seleccione el motivo de contacto:</label>
         <select id="contacto" name="contacto">
           <option value="COMPRAS">COMPRAS</option>
@@ -45,33 +45,24 @@
 
 
         <label for="myfile">Select a file:</label>
-        <input type="file" id="myfile" name="myfile"><br><br>
-        <input type="submit" value="Submit"><br></br>
-
+        <input type="file" id="myfile" name="myfile"><br>
+        
         <input type="reset" value="Restablecer"><br></br>
-
-        <button onclick="copiar()">copiarTexto</button>
-
 
       </form>
       <span id="valida"></span><br>
       <button onclick="copiar()" type="button">texto</button>
       <button onclick="copiar()">copiarTexto</button>
       <button onclick="valido()">validamail</button>
-
-      <form>
-        <label>Caracteres restantes: <span></span></label>
-        <input type="text" maxlength="150" />
-        <label> Caracteres restantes: <span></span></label>
-        <textarea maxlength="150"></textarea>
-      </form>
-
+<br>
+<br>
+      
     </div>
 
 
   </div>
 
- 
+
   <footer>
     <p>Términos de uso y políticas de privacidad.
       © 2022 Grupo Aensis – Todos los derechos reservados.</p>
@@ -80,16 +71,16 @@
       <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px">
   </footer>
   <script>
-const mensaje = document.getElementById('mensaje');
-const contador = document.getElementById('contador');
-const longitudAct = mensaje.value.length;
-    contador.innerHTML = longitudAct;
-
-mensaje.addEventListener('input', function(e) {
-    const target = e.target;
+    const mensaje = document.getElementById('mensaje');
+    const contador = document.getElementById('contador');
     const longitudAct = mensaje.value.length;
     contador.innerHTML = longitudAct;
-});
+
+    mensaje.addEventListener('input', function (e) {
+      const target = e.target;
+      const longitudAct = mensaje.value.length;
+      contador.innerHTML = longitudAct;
+    });
 
 
 
@@ -100,7 +91,7 @@ mensaje.addEventListener('input', function(e) {
       let nombre = document.getElementById("nombre");
       let apellido = document.getElementById("apellido");
       let mensaje = document.getElementById("mensaje");
-      
+
 
 
       let bandera = 1;
@@ -115,23 +106,25 @@ mensaje.addEventListener('input', function(e) {
       }
       if (nombre.value == "") {
         valido.innerText = "verificar Nombre";
-        bandera=0;
+        bandera = 0;
       }
       if (apellido.value == "") {
         valido.innerText = "verificar apellido";
-        bandera=0;
+        bandera = 0;
       }
       if ((mensaje.value.trim() === "")) {
         valido.innerText = "verificar mensaje";
-        bandera=0;
-        }
-        if (bandera==1) {
-          simular_envio();
-        }
+        bandera = 0;
+      }
+      if (bandera == 1) {
+        simular_envio();
+      }
     }
     function simular_envio() {
       alert("Su consulta fue enviada! MUCHAS GRACIAS");
       return false;
+
+      //haciendo comit
     }
     function copiar() {
       let nombre = document.getElementById("nombre");

@@ -91,6 +91,7 @@
       let nombre = document.getElementById("nombre");
       let apellido = document.getElementById("apellido");
       let mensaje = document.getElementById("mensaje");
+      let errores =[];
 
 
 
@@ -102,20 +103,25 @@
         bandera = 0;
         valido.innerText = "verificarMail";
         cartel = "MAIL INCORRECTO";
-
+        errores.push(cartel);
       }
       if (nombre.value == "") {
-        valido.innerText = "verificar Nombre";
+      cartel = "verificar Nombre";
         bandera = 0;
+        errores.push(cartel);
       }
       if (apellido.value == "") {
-        valido.innerText = "verificar apellido";
+        cartel = "verificar apellido";
         bandera = 0;
+        errores.push(cartel);
       }
       if ((mensaje.value.trim() === "")) {
-        valido.innerText = "verificar mensaje";
+        cartel = "verificar mensaje";
         bandera = 0;
+        errores.push(cartel);
       }
+      valido.innerText=errores.join(" - ");
+      
       if (bandera == 1) {
         simular_envio();
       }
@@ -124,7 +130,7 @@
       alert("Su consulta fue enviada! MUCHAS GRACIAS");
       return false;
 
-      //haciendo comit
+
     }
     function copiar() {
       let nombre = document.getElementById("nombre");

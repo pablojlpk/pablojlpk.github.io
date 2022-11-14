@@ -5,7 +5,6 @@
 
   <link rel="stylesheet" type="text/css" href="estilo.css">
 
-<body>
   <header>
 
     <ul>
@@ -15,26 +14,20 @@
     </ul>
   </header>
 
-  <div class="flex-container">
+<body>
 
-
+  <div class=aflex-container">
     <div class="formulario-contacto">
-
-
-      <form action="#" onsubmit="return simular_envio()">
+      <form onsubmit="return validos()">
         <label for="nombre">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre" value=""><br>
         <label for="apellido">Apellido:</label><br>
-        <input type="text" id="apellido" name="apellido" value=""><br><br>
-        <label for="mail">Mail:</label><br><br>
+        <input type="text" id="apellido" name="apellido" value=""><br>
+        <label for="mail">Mail:</label><br>
         <input type="text" id="mail" nome="mail" value=""><br><br>
-        <textarea type="text" id="mensaje" rows="15" cols="40" maxlength="150" value="">
-
+        <textarea type="text" id="mensaje" rows="10" cols="50" maxlength="150" value="">
         </textarea><br>
         <label for="contador">contador</label>
-
-        <p2>el comentario no puede superar los 300 caracteres</p2><br><br>
-
         <label for="contacto">Seleccione el motivo de contacto:</label>
         <select id="contacto" name="contacto">
           <option value="COMPRAS">COMPRAS</option>
@@ -42,107 +35,86 @@
           <option value="SUGERENCIAS">SUGERENCIAS</option>
           <option value="OTRAS">OTRAS</option>
         </select>
-
-
-        <label for="myfile">Select a file:</label>
-        <input type="file" id="myfile" name="myfile"><br>
-        
-        <input type="reset" value="Restablecer"><br></br>
+        <label for="archivo">Archivo:</label>
+        <input type="file" id="miarchivo" name="miarchivo"><br>
+        <input type="reset" value="Restablecer"><br><br>
 
       </form>
-      <span id="valida"></span><br>
-      <button onclick="copiar()" type="button">texto</button>
-      <button onclick="copiar()">copiarTexto</button>
-      <button onclick="valido()">validamail</button>
-<br>
-<br>
-      
+      <div class="botones">
+        <button onclick="valido()">Enviar</button>
+     </div>
+      <span id="valida" style="font-size: large ; color: red"></span><br>
+      <ol id="ltaMensajes"><br>
+      </ol>
     </div>
 
 
-  </div>
+    <footer>
+      <p>Términos de uso y políticas de privacidad.
+        © 2022 Grupo Aensis – Todos los derechos reservados.</p>
+      <br>
+      <logo class="logo">
+        <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px">
+    </footer>
 
 
-  <footer>
-    <p>Términos de uso y políticas de privacidad.
-      © 2022 Grupo Aensis – Todos los derechos reservados.</p>
-    <p></p>
-    <logo class="logo">
-      <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px">
-  </footer>
-  <script>
-    const mensaje = document.getElementById('mensaje');
-    const contador = document.getElementById('contador');
-    const longitudAct = mensaje.value.length;
-    contador.innerHTML = longitudAct;
+    <script>
+      function valido() {
+        exreg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i; //expresiones regulares
+        let valido = document.getElementById("valida");
+        let nombre = document.getElementById("nombre");
+        let apellido = document.getElementById("apellido");
+        let mensaje = document.getElementById("mensaje");
+        let contacto = document.getElementById("contacto");
+        let ltaMensajes = document.getElementById("ltaMensajes");
+        let archivo = document.getElementById("miarchivo");
+        let botones = document.getElementById("botones");
+        
+        let errores = [];
+        let bandera = 1;
+        if (exreg.test(mail.value)) {//valido mail
+          //bandera = 1;
+          valido.innerText = "";
+        } else {
+          bandera = 0;
+          
+          cartel = "MAIL INCORRECTO";
+          errores.push(cartel);
+        }
+        if (nombre.value == "") {
+          cartel = "verificar Nombre";
+          bandera = 0;
+          errores.push(cartel);
+        }
+        if (apellido.value == "") {
+          cartel = "verificar apellido";
+          bandera = 0;
+          errores.push(cartel);
+        }
+        if ((mensaje.value.trim() === "")) {
+          cartel = "verificar mensaje";
+          bandera = 0;
+          errores.push(cartel);
+        }
+        valido.innerText = errores.join(" - ");
 
-    mensaje.addEventListener('input', function (e) {
-      const target = e.target;
-      const longitudAct = mensaje.value.length;
-      contador.innerHTML = longitudAct;
-    });
+        if (bandera == 1) {
+          let item = document.createElement("li");
+          ltaMensajes.appendChild(item);
 
+          item.innerHTML = "<b>nombre:</b>" + nombre.value + "<b>,apellido:</b>" + apellido.value + "<b>, Mensaje: </b>" + mensaje.value + "<b>, Contacto: </b> " + contacto.value + "<b>, archivo: </b> " + archivo.value;
+          
+          simular_envio();
+          
 
-
-
-    function valido() {
-      exreg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i; //expresiones regulares
-      let valido = document.getElementById("valida");
-      let nombre = document.getElementById("nombre");
-      let apellido = document.getElementById("apellido");
-      let mensaje = document.getElementById("mensaje");
-      let errores =[];
-
-
-
-      let bandera = 1;
-      if (exreg.test(mail.value)) {//valido mail
-        //bandera = 1;
-        valido.innerText = "";
-      } else {
-        bandera = 0;
-        valido.innerText = "verificarMail";
-        cartel = "MAIL INCORRECTO";
-        errores.push(cartel);
+        }
       }
-      if (nombre.value == "") {
-      cartel = "verificar Nombre";
-        bandera = 0;
-        errores.push(cartel);
-      }
-      if (apellido.value == "") {
-        cartel = "verificar apellido";
-        bandera = 0;
-        errores.push(cartel);
-      }
-      if ((mensaje.value.trim() === "")) {
-        cartel = "verificar mensaje";
-        bandera = 0;
-        errores.push(cartel);
-      }
-      valido.innerText=errores.join(" - ");
       
-      if (bandera == 1) {
-        simular_envio();
+      function simular_envio() {
+        alert("Su consulta fue enviada! MUCHAS GRACIAS");
+        return false;
       }
-    }
-    function simular_envio() {
-      alert("Su consulta fue enviada! MUCHAS GRACIAS");
-      return false;
-
-
-    }
-    function copiar() {
-      let nombre = document.getElementById("nombre");
-      let apellido = document.getElementById("apellido");
-      let mail = document.getElementById("mail");
-      nombre.value = "Pablo Javier";
-      apellido.value = "Lopez Pujato";
-      mail.value = "pp@pp.com"
-
-    }
-
-  </script>
+    </script>
 
 </body>
 

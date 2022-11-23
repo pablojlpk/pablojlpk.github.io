@@ -161,9 +161,6 @@ form {
 
 
 
-
-
-
 /*
 //estilos pagina producto
 
@@ -197,20 +194,3 @@ h1 {
 /*
 pagina servicios
 */
-.productos {
-    background-color: lightgreen;
-    color: red;
-    border: 3px;
-    display: flex;
-}
-
-.productos>div {
-    background-color: DodgerBlue;
-    color: white;
-    width: 33%;
-    margin: 10px;
-    text-align: center;
-    line-height: 35px;
-    font-size: 30px;
-    padding-bottom: 1%;
-}

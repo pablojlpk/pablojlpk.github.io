@@ -1,0 +1,199 @@
+.wrapper {
+    width: 100%;
+    /*ancho a 90*/
+    max-width: 1000px;
+    /* ancho*/
+    margin: auto;
+    /* centro */
+    overflow: hidden;
+    /* saco errores */
+
+}
+
+nav {
+    background-color: rgb(90, 90, 90);
+    color: rgb(255, 238, 0);
+    
+    font-style: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+}
+header{
+    height: 70px;
+}
+
+head {
+    background-color: blue;
+    width: auto%;
+    height: 15%;
+    border-color: blue;
+}
+
+body {
+    width: auto;
+    background-color: none;
+    height: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: justify;
+}
+
+img {
+    //visibility: hidden;
+
+}
+
+
+.caja1 {
+    background-color: rebeccapurple;
+    width: 15%;
+    height: 500px;
+    float: left;
+}
+
+.centro {
+    background-image: url("img/biga.png");
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    align-self: center;
+    vertical-align: center;
+    
+
+    font-size: 20px;
+    width: 70%;
+    height: 500px;
+    float: left;
+vertical-align: middle;
+
+}
+
+.caja2 {
+    background-color: rgb(247, 247, 247);
+    width: 15%;
+    height: 500px;
+    float: right;
+    text-align: center;
+    justify-content: space-between;
+
+}
+
+
+ul {
+    background-color: lightgray;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 15px;
+    
+    
+    
+  }
+  
+  li {
+    float: left;
+
+}
+  
+  li a {
+    display: block;
+    padding: 25px;
+      
+}
+
+
+.menu {
+    background-image: url("img/prod-encab.png");
+                display: flex;
+                list-style: none;
+                padding: 0;
+               
+    width: 100%;
+    height: 100px;
+
+}
+
+
+
+soreca{
+    font: bold;
+    
+   font-style: inherit;
+}
+
+footer {
+    position: fixed;
+    background-color: rgb(175, 180, 175);
+    bottom: 0%;
+    width: 100%;
+    height: 110px;
+    vertical-align: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+
+}
+/*
+//formulario contacto
+*/
+
+.botones{
+    text-align: center;
+    font: larger;
+
+}
+
+ol{
+    
+    font-style: italic;
+   font-size:large;
+   color: green;
+}
+    
+
+form{
+    text-align: center;
+    background-color: cadetblue;
+    display: block;
+}
+
+
+
+
+
+/*
+//estilos pagina producto
+
+*/
+        .carousel {    
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+        }
+
+        .botones {
+            text-decoration: none;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: transparent;
+            text-align: center;
+            ;
+        }
+
+        #imagen {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            
+        }
+        h1{
+            text-align: center;
+        }
+/*
+pagina servicios
+*/
+

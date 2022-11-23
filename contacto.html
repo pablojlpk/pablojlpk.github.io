@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+
+  <header>
+
+    <ul>
+      <li><a href="index.html">Principal</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+    </ul>
+  </header>
+
+<body>
+
+  <div class=aflex-container">
+    <div class="formulario-contacto">
+      <form onsubmit="return validos()">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" value=""><br>
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" id="apellido" name="apellido" value=""><br>
+        <label for="mail">Mail:</label><br>
+        <input type="text" id="mail" nome="mail" value=""><br><br>
+        <textarea type="text" id="mensaje" rows="10" cols="50" maxlength="150" value="">
+        </textarea><br>
+        <label for="contador">contador</label>
+        <label for="contacto">Seleccione el motivo de contacto:</label>
+        <select id="contacto" name="contacto">
+          <option value="COMPRAS">COMPRAS</option>
+          <option value="RECLAMOS ">RECLAMOS</option>
+          <option value="SUGERENCIAS">SUGERENCIAS</option>
+          <option value="OTRAS">OTRAS</option>
+        </select>
+        <label for="archivo">Archivo:</label>
+        <input type="file" id="miarchivo" name="miarchivo"><br>
+        <input type="reset" value="Restablecer"><br><br>
+
+      </form>
+      <div class="botones">
+        <button onclick="valido()">Enviar</button>
+     </div>
+      <span id="valida" style="font-size: large ; color: red"></span><br>
+      <ol id="ltaMensajes"><br>
+      </ol>
+    </div>
+
+
+    <footer>
+      <p>Términos de uso y políticas de privacidad.
+        © 2022 Grupo Aensis – Todos los derechos reservados.</p>
+      <br>
+      <logo class="logo">
+        <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px">
+    </footer>
+
+
+    <script>
+      function valido() {
+        exreg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i; //expresiones regulares
+        let valido = document.getElementById("valida");
+        let nombre = document.getElementById("nombre");
+        let apellido = document.getElementById("apellido");
+        let mensaje = document.getElementById("mensaje");
+        let contacto = document.getElementById("contacto");
+        let ltaMensajes = document.getElementById("ltaMensajes");
+        let archivo = document.getElementById("miarchivo");
+        let botones = document.getElementById("botones");
+        
+        let errores = [];
+        let bandera = 1;
+        if (exreg.test(mail.value)) {//valido mail
+          //bandera = 1;
+          valido.innerText = "";
+        } else {
+          bandera = 0;
+          
+          cartel = "MAIL INCORRECTO";
+          errores.push(cartel);
+        }
+        if (nombre.value == "") {
+          cartel = "verificar Nombre";
+          bandera = 0;
+          errores.push(cartel);
+        }
+        if (apellido.value == "") {
+          cartel = "verificar apellido";
+          bandera = 0;
+          errores.push(cartel);
+        }
+        if ((mensaje.value.trim() === "")) {
+          cartel = "verificar mensaje";
+          bandera = 0;
+          errores.push(cartel);
+        }
+        valido.innerText = errores.join(" - ");
+
+        if (bandera == 1) {
+          let item = document.createElement("li");
+          ltaMensajes.appendChild(item);
+
+          item.innerHTML = "<b>nombre:</b>" + nombre.value + "<b>,apellido:</b>" + apellido.value + "<b>, Mensaje: </b>" + mensaje.value + "<b>, Contacto: </b> " + contacto.value + "<b>, archivo: </b> " + archivo.value;
+          
+          simular_envio();
+          
+
+        }
+      }
+      
+      function simular_envio() {
+        alert("Su consulta fue enviada! MUCHAS GRACIAS");
+        return false;
+      }
+    </script>
+
+</body>
+
+</html>

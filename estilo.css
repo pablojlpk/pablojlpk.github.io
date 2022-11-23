@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 
+=======
+.wrapper {
+    width: 100%;
+    /*ancho a 90*/
+    max-width: 1000px;
+    /* ancho*/
+    margin: auto;
+    /* centro */
+    overflow: hidden;
+    /* saco errores */
+
+}
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 
 nav {
     background-color: rgb(90, 90, 90);
@@ -40,9 +54,12 @@ img {
     width: 13%;
     height: 500px;
     float: left;
+<<<<<<< HEAD
     padding-left: 1%;
     padding-right: 1%;
 
+=======
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 }
 
 .centro {
@@ -55,15 +72,23 @@ img {
     color: aliceblue;
     align-self: center;
     vertical-align: center;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 
     font-size: 20px;
     width: 68%;
     height: 500px;
     float: left;
+<<<<<<< HEAD
     vertical-align: middle;
     padding-left: 1%;
     padding-right: 1%;
+=======
+vertical-align: middle;
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 
 }
 
@@ -84,6 +109,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
+<<<<<<< HEAD
     font-size: 20px;
 
 
@@ -91,6 +117,15 @@ ul {
 }
 
 li {
+=======
+    font-size: 15px;
+    
+    
+    
+  }
+  
+  li {
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
     float: left;
 
 }
@@ -104,9 +139,16 @@ li a {
 
 .menu {
     background-image: url("img/prod-encab.png");
+<<<<<<< HEAD
     display: flex;
     list-style: none;
     padding: 0;
+=======
+                display: flex;
+                list-style: none;
+                padding: 0;
+               
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
     width: 100%;
     height: 100px;
 
@@ -116,8 +158,13 @@ li a {
 
 soreca {
     font: bold;
+<<<<<<< HEAD
 
     font-style: inherit;
+=======
+    
+   font-style: inherit;
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 }
 
 footer {
@@ -132,12 +179,19 @@ footer {
     font-size: 10px;
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 /*
 //formulario contacto
 */
 
+<<<<<<< HEAD
 .botones {
+=======
+.botones{
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
     text-align: center;
     font: larger;
 
@@ -161,18 +215,29 @@ form {
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 /*
 //estilos pagina producto
 
 */
+<<<<<<< HEAD
 .carousel {
     max-width: 800px;
     margin: 20px auto;
     display: flex;
 }
+=======
+        .carousel {    
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+        }
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140
 
 .botones {
     text-decoration: none;
@@ -183,6 +248,7 @@ form {
     ;
 }
 
+<<<<<<< HEAD
 #imagen {
     width: 100%;
     height: 400px;
@@ -214,3 +280,18 @@ pagina servicios
     font-size: 30px;
     padding-bottom: 1%;
 }
+=======
+        #imagen {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            
+        }
+        h1{
+            text-align: center;
+        }
+/*
+pagina servicios
+*/
+
+>>>>>>> b49865fde95a0619f99f6bac8c1f45c104f3a140

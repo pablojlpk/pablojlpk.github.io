@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>productos_actualizado</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+
+</head>
+
+
+<script>
+
+
+  window.onload = function () {
+
+    const IMAGENES = [ //creo vector que contiene las siguiens imágenes
+      "img/alamband.png",
+      'img/alambre_galvanizado.png',
+      'img/clavo.png',
+      'img/rombo.png',
+    ];
+
+
+    const TIEMPO_INTERVALO_MILESIMAS_SEG = 3000;//tiempo 5 segundos entre imagen
+    let posicionActual = 0;
+    let $botonRetroceder = document.querySelector('#retroceder');
+    let $botonAvanzar = document.querySelector('#avanzar');
+    let $imagen = document.querySelector('#imagen');
+    let $botonPlay = document.querySelector('#play');
+    let $botonStop = document.querySelector('#stop');
+    let intervalo;
+
+    // Funciones
+
+    /**
+     * Funcion que cambia la foto en la siguiente posicion
+     */
+    function pasarFoto() {
+      if (posicionActual >= IMAGENES.length - 1) {
+        posicionActual = 0;
+      } else {
+        posicionActual++;
+      }
+      renderizarImagen();
+    }
+
+    /**
+     * Funcion que cambia la foto en la anterior posicion
+     */
+    function retrocederFoto() {
+      if (posicionActual <= 0) {
+        posicionActual = IMAGENES.length - 1;
+      } else {
+        posicionActual--;
+      }
+      renderizarImagen();
+    }
+
+    function renderizarImagen() { //actualizo imaggen segun posicion
+      $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+    }
+
+
+    function playIntervalo() { //Funcion reproducir automaticamente
+      intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+      // Desactivamos los botones de control
+      $botonAvanzar.setAttribute('disabled', true);
+      $botonRetroceder.setAttribute('disabled', true);
+      $botonPlay.setAttribute('disabled', true);
+      $botonStop.removeAttribute('disabled');
+
+    }
+
+
+    function stopIntervalo() {//se para la reproduccion
+      clearInterval(intervalo);
+      //activo botones
+      $botonAvanzar.removeAttribute('disabled');
+      $botonRetroceder.removeAttribute('disabled');
+      $botonPlay.removeAttribute('disabled');
+      $botonStop.setAttribute('disabled', true);
+    }
+
+    // evento de los botones
+    $botonAvanzar.addEventListener('click', pasarFoto);
+    $botonRetroceder.addEventListener('click', retrocederFoto);
+    $botonPlay.addEventListener('click', playIntervalo);
+    $botonStop.addEventListener('click', stopIntervalo);
+    //inicializo las funciones
+    renderizarImagen();
+    playIntervalo();
+  } 
+</script>
+
+
+
+
+<body>
+
+
+  <header>
+    <ul>
+      <li><a href="index.html">Principal</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+  </header>
+
+  <h1>Productos Destacados </h1>
+  <div class="carousel">
+    <div id="imagen"> </div>
+  </div>
+
+  <div class="botones">
+    <br>
+    <button id="avanzar">Avanzar</button>
+    <button id="stop" disabled>Parar Reproduccion automática</button>
+    <button id="play">Reproducir Automaticamente</button>
+    <button id="retroceder">Retroceder</button>
+  </div>
+
+  <h1> Comprar directa</h1>
+  <div class="prod">
+    <div>
+      <img src="img/romboidal.png" style="width:50%; border: 3px;"><br>
+      <a
+        href="https://articulo.mercadolibre.com.ar/MLA-1126526398-acindar-tejido-romboidal-200-x-15-mts-rombo-63-calibre-14-_JM?hide_psmb=true#reco_item_pos=6&reco_backend=best-seller&reco_backend_type=low_level&reco_client=highlights-rankings&reco_id=7c7ec9f5-6e79-4f5e-980a-57699f8ff073&tendency_print_id=0d5eac9e-a7b1-4307-8b4d-5004372558e2">comprar</a>
+      <h5>Tejido romboidal 1.8 x 10 Metros</h5>
+    </div>
+
+    <div>
+      <img src="img/alambre_puas.png" style="width:50%; border: 3px;"><br>
+      <a
+        href="https://articulo.mercadolibre.com.ar/MLA-878189620-alambre-de-pua-galvanizado-x-100-metros-5kgs-_JM?matt_tool=40664728&matt_word=&matt_source=google&matt_campaign_id=14508409199&matt_ad_group_id=124055975662&matt_match_type=&matt_network=g&matt_device=c&matt_creative=543394189910&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=227988112&matt_product_id=MLA878189620&matt_product_partition_id=1415181876463&matt_target_id=aud-1659384947886:pla-1415181876463&gclid=CjwKCAiAjs2bBhACEiwALTBWZSrNuYjH1C2xMAHmPoXGrgP3r6tia7BvaxaAO-QUH86Wp9ypdXyOdRoCIW0QAvD_BwE">Comprar</a>
+      <h5>Alambre de puas x 100 metros</h5>
+    </div>
+
+    <div>
+      <img src="img/alambre_galvanizado.png" style="width:50%; border: 3px;"><br>
+      <a
+        href=https://articulo.mercadolibre.com.ar/MLA-1123974547-alambre-liso-galvanizado-calibre-n-14-acindar-x-250-mts-_JM#position=1&search_layout=stack&type=item&tracking_id=c53b9607-e04a-4a18-85cd-005e119f692a>Comprar</a>
+      <h5>Alambre Galvanizado N°18 rollo</h5>
+    </div>
+
+    <div>
+      <img src="img/clavo_PuntaParis.png" style="width:50%; border: 3px;"><br>
+      <a
+        href="https://articulo.mercadolibre.com.ar/MLA-902074542-clavo-punta-paris-de-2-12-x-kg-galeria-_JM?matt_tool=14065579&matt_word=&matt_source=google&matt_campaign_id=14508409190&matt_ad_group_id=124055975222&matt_match_type=&matt_network=g&matt_device=c&matt_creative=543394189898&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=305072479&matt_product_id=MLA902074542&matt_product_partition_id=1406963404221&matt_target_id=aud-1659384947886:pla-1406963404221&gclid=CjwKCAiAjs2bBhACEiwALTBWZSTiW_sXObaH-U7EfVpYF15fu7V_cPhq1cEq-QE4LisqpqCtUJRSthoCk2cQAvD_BwE">Comprar</a>
+      <h5>Clavos Punta París</h5>
+    </div>
+  </div>
+  <p>Gracias por contar con nosotros</p>
+
+  <footer>
+    <p>Términos de uso y políticas de privacidad.
+      © 2022 Grupo Aensis – Todos los derechos reservados.</p>
+    <p> Telefono 266-4311-1121 int: 121,432,111,150 </p>
+    <p></p>
+    <logo class="logo">
+      <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" alt="" height="60px">
+  </footer>
+
+
+
+</body>
+
+</html>
